@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica de ciberseguridad</title>
+</head>
+<body style="font-family: Arial; max-width: 600px; margin: 50px auto; padding: 20px;">
+  <h1>Práctica de ciberseguridad</h1>
+  <p>Aprende a reconocer formularios sospechosos con esta demostración educativa.</p>
+
+  <form id="demo">
+    <label for="correo">Correo de prueba:</label><br>
+    <input id="correo" type="email" placeholder="ejemplo@prueba.com" required>
+    <br><br>
+    <button type="submit">Probar formulario</button>
+  </form>
+
+  <p id="mensaje"></p>
+  <p><strong>Seguridad:</strong> Esta práctica no envía ni guarda información.</p>
+
+  <script>
+    document.getElementById("demo").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("mensaje").textContent =
+        "¡Prueba completada! No se envió ni guardó ninguna información.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
